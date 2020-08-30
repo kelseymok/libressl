@@ -26,8 +26,8 @@ encrypt_file() {
       -v "${script_dir}/original:/original" \
       -v "${script_dir}/input:/input" \
       --entrypoint "" \
-      libressl:2.8.3 \
-      openssl enc -e -aes-256-cbc  -in /original/file-to-encrypt.txt -out /input/my-encrypted-file.enc -pass pass:${password}
+      kb1rd/libressl:2.8.3 \
+      openssl enc -e -aes-256-cbc -in /original/file-to-encrypt.txt -out /input/my-encrypted-file.enc -pass pass:${password}
   remove_container
 }
 
@@ -37,8 +37,8 @@ decrypt_file() {
       -v "${script_dir}/input:/input" \
       -v "${script_dir}/output:/output" \
       --entrypoint="" \
-      libressl:2.8.3 \
-      openssl enc -d -aes-256-cbc  -in /input/my-encrypted-file.enc -out /output/my-decrypted-file.txt -pass pass:${password}
+      kb1rd/libressl:2.8.3 \
+      openssl enc -d -aes-256-cbc -in /input/my-encrypted-file.enc -out /output/my-decrypted-file.txt -pass pass:${password}
   remove_container
 }
 

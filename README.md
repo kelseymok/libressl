@@ -18,6 +18,6 @@ docker run \
     -v "SOME-FULL-PATH/output:/output" \
     --entrypoint="" \
     kb1rd/libressl:2.8.3 \
-    openssl enc -d -aes-256-cbc  -in /input/SOME-ENCRYPTED-FILENAME -out /output/SOME-DECRYPTED-FILENAME -pass pass:SOME-PASSWORD
+    openssl enc -d -aes-256-cbc -in /input/SOME-ENCRYPTED-FILENAME -out /output/SOME-DECRYPTED-FILENAME -pass pass:SOME-PASSWORD
 ```
 For a full encryption and decryption example with mounted directories, see the [example directory](./example).
