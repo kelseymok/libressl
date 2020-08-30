@@ -4,16 +4,13 @@ This Docker image contains the LibreSSL (v2.8.3) binary which is useful if your 
 ## Quickstart
 ### Interactive Mode
 ```bash
-docker run -it \
-    --name libressl \
-    kb1rd/libressl:2.8.3 bash
+docker run -it kb1rd/libressl:2.8.3 bash
 ```
 
 ### With Mounted Directories
 The following assumes that there are pre-existing directories: input (containing files to be decrypted or encrypted) and output (an empty directory which will contain your decrypted or encrypted files as a result of running a decryption/encryption command). It mounts those directories into the docker container (and are therefore mirrored on your local machine).
 ```bash
 docker run \
-    --name libressl \
     -v "SOME-FULL-PATH/input:/input" \
     -v "SOME-FULL-PATH/output:/output" \
     --entrypoint="" \
